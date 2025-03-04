@@ -74,7 +74,7 @@ body::-webkit-scrollbar-thumb {
     @apply text-lightgray hover:text-white duration-300;
   }
   .link-green {
-    @apply text-green font-bold hover:underline;
+    @apply text-green font-bold hover:underline cursor-pointer;
   }
   .hover-image {
     @apply brightness-[0.8] hover:brightness-100 duration-300;
