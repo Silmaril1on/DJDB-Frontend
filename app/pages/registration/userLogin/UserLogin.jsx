@@ -60,7 +60,7 @@ const UserLogin = () => {
           </span>
         </Link>
         <Button type="submit" className="green-btn" disabled={loading}>
-          Log in
+          {loading ? "Logging in..." : "Log in"}
         </Button>
         <ErrorMsg error={error} />
       </form>

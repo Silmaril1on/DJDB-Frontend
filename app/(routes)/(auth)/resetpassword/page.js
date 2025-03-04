@@ -1,7 +1,11 @@
 import ResetPassword from "@/app/pages/registration/resetpassword/ResetPassword";
 
-const ResetPassPage = () => {
+export const metadata = {
+  title: "DJDB - Reset Password",
+};
+
+const ResetPasswordPage = () => {
   return <ResetPassword />;
 };
 
-export default ResetPassPage;
+export default ResetPasswordPage;
