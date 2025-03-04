@@ -6,6 +6,7 @@ import SectionHeadline from "@/app/components/uicomponents/SectionHeadline";
 
 const AllArtists = ({ initialData }) => {
   const [filter, setFilter] = useState({ country: "", sort: "default" });
+
   return (
     <div className="flex flex-col space-y-5">
       <SectionHeadline

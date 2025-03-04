@@ -34,9 +34,9 @@ const Gallery = ({ data }) => {
   };
 
   return (
-    <section className="h-screen flex-center flex-col lg:max-h-[700px] bg-neutral-800 relative">
+    <section className="flex-center flex-col lg:max-h-[700px] bg-neutral-800 relative lg:py-10">
       <GalleryHeadline active={active} data={data} />
-      <div className="w-full lg:w-[70%] lg:h-[550px] relative px-7 group flex-center flex-col">
+      <div className="w-full lg:w-[70%] lg:h-[550px] relative lg:px-7 group flex-center flex-col px-3 py-3">
         <div className="overflow-hidden w-full h-[400px] lg:h-full relative flex-center">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
@@ -46,21 +46,20 @@ const Gallery = ({ data }) => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="w-full h-auto lg:h-full flex-center absolute"
-              drag="x" // Enable horizontal dragging
-              dragConstraints={{ left: 0, right: 0 }} // Restrict drag to horizontal axis
-              onDragEnd={handleDragEnd} // Handle swipe gestures
+              className="w-full h-full flex-center absolute"
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              onDragEnd={handleDragEnd}
               whileTap={{ cursor: "grabbing" }}
             >
               <Image
-                className="w-auto h-full"
+                className="object-contain"
                 src={gallery[active]}
                 alt="gallery"
-                width={1200}
-                height={1200}
-                priority
-                quality={100}
+                fill
+                quality={85}
                 draggable={false}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 1200px"
               />
             </motion.div>
           </AnimatePresence>

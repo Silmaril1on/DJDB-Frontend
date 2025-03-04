@@ -9,16 +9,16 @@ const ArtistAvatar = ({ data }) => {
       variants={zoomIn}
       initial="hidden"
       animate="visible"
-      className="w-full lg:w-2/4 h-full"
+      className="w-full relative h-[500px] lg:h-full lg:w-2/4"
     >
       <Image
-        className="w-full h-full object-cover"
-        width={1000}
-        height={1000}
+        className="object-cover"
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 50vw"
         src={data.image}
         alt={data.name}
         priority
-        quality={100}
+        quality={90}
       />
     </motion.div>
   );

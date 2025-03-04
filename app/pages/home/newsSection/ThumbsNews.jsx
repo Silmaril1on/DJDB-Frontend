@@ -47,8 +47,7 @@ const ThumbsNews = ({ news, activeIndex, setActiveIndex }) => {
                     src={item.poster || "/placeholder-image.jpg"}
                     width={300}
                     height={300}
-                    quality={100}
-                    priority
+                    quality={80}
                     alt="thumb"
                   />
                 </div>

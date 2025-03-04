@@ -7,7 +7,7 @@ import Gallery from "./artistgallery/Gallery";
 const ArtistDetailsPage = ({ data }) => {
   return (
     <main>
-      <section className="flex flex-col lg:flex-row h-auto lg:h-screen lg:max-h-[700px] relative lg:px-[10%]">
+      <section className="flex flex-col lg:flex-row  lg:h-screen lg:max-h-[700px] relative lg:px-[10%]">
         <LeftSlideName data={data} />
         <ArtistAvatar data={data} />
         <Info data={data} />

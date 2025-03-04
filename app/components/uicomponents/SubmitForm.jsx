@@ -20,7 +20,7 @@ const SubmitForm = () => {
           animate={{ y: 0 }}
           transition={{ duration: 0.4 }}
           exit={{ y: "-100%" }}
-          className="fixed w-full flex-center top-0 font-bold text-2xl text-lightgray backdrop-blur-md"
+          className="fixed w-full flex-center top-0 font-bold text-2xl text-lightgray backdrop-blur-md z-[11]"
         >
           <Close onClick={closeModal} className="absolute right-3" />
           <div className="px-5 py-5">

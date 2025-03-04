@@ -50,7 +50,7 @@ body::-webkit-scrollbar-thumb {
   }
   input,
   textarea {
-    @apply bg-green/20 font-primary placeholder:opacity-80 text-green placeholder:text-green border-green outline-none border p-2 w-full;
+    @apply bg-green/20 backdrop-blur-2xl font-primary placeholder:opacity-80 text-green placeholder:text-green border-green outline-none border p-2 w-full;
   }
   .green-btn {
     @apply border border-green bg-green/20 px-5 py-1 text-green hover:bg-green/30 duration-300;

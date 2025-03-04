@@ -10,7 +10,7 @@ const CardImage = ({ item }) => {
         height={500}
         alt={item.name}
         priority
-        quality={100}
+        quality={80}
       />
     </div>
   );

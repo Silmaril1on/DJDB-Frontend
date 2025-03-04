@@ -22,12 +22,11 @@ const NewsList = ({ data }) => {
                 <div className="w-full">
                   <div className="h-44">
                     <Image
-                      className="object-cover w-full h-full hover-image"
+                      className="object-cover w-full h-full hover-image "
                       width={500}
                       height={500}
                       src={item.poster}
-                      quality={100}
-                      priority
+                      quality={80}
                       alt={item.headline}
                     />
                   </div>

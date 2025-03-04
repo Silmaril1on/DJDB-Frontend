@@ -21,10 +21,9 @@ const ReviewsCardBody = ({ data }) => {
             className="w-full h-full object-cover hover:scale-105 hover-image"
             src={data.image}
             alt={data.name}
-            width={400}
-            height={400}
-            quality={100}
-            priority
+            width={210}
+            height={210}
+            quality={80}
           />
         </div>
       </div>

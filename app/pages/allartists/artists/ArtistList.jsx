@@ -31,19 +31,22 @@ const ArtistList = ({ initialData, filter }) => {
     }
   };
 
+  console.log(data);
+
   const sortArtists = [...data]
     .filter((artist) => {
-      if (filter.country) {
-        return artist.country === filter.country;
-      }
-      if (filter.sortGender) {
-        return artist.sex === filter.sortGender;
-      }
-      return true;
+      const countryMatch = filter.country
+        ? artist.country === filter.country
+        : true;
+      const genderMatch = filter.sortGender
+        ? artist.sex === filter.sortGender
+        : true;
+      return countryMatch && genderMatch;
     })
     .sort((a, b) => {
       const aRating = a.ratingStats?.metaScore ?? 0;
       const bRating = b.ratingStats?.metaScore ?? 0;
+
       if (filter.sortName) {
         if (filter.sortName === "name-asc") return a.name.localeCompare(b.name);
         if (filter.sortName === "name-desc")

@@ -40,7 +40,9 @@ const FilterButtons = ({ setFilter, data }) => {
     <div className="flex space-x-1 xl:space-x-4 px-3 lg:px-5 sticky lg:static top-1">
       {filterOptions.map(({ label, key, options }) => (
         <select
+          id={key}
           key={key}
+          name={key}
           onChange={(e) =>
             setFilter((prev) => ({ ...prev, [key]: e.target.value }))
           }

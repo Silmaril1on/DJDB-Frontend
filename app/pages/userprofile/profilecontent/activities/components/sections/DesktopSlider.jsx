@@ -31,8 +31,7 @@ const DesktopSlider = ({ items }) => {
                   alt={item.name}
                   width={400}
                   height={400}
-                  quality={100}
-                  priority
+                  quality={80}
                 />
               </div>
               <article>

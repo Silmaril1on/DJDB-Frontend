@@ -1,4 +1,5 @@
 import MyProfile from "@/app/pages/userprofile/MyProfile";
+import { BACKEND_URL } from "@/app/utils/urls";
 import { cookies } from "next/headers";
 
 export async function generateMetadata() {

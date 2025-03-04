@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Button from "../components/uicomponents/Button";
 import { setSubmitModal } from "@/app/features/modalSlice";
 import { BACKEND_URL } from "../utils/urls";
+import LogoBeat from "../components/uicomponents/LogoBeat";
+import FormBackground from "../components/uicomponents/FormBackground";
 
 const FestivalForm = () => {
   const { user, userDetails } = useSelector((store) => store.user);
@@ -94,60 +96,63 @@ const FestivalForm = () => {
   };
 
   return (
-    <div className="flex-center flex-col bg-black p-5">
-      <h2 className="text-3xl font-bold">Create Festival</h2>
-      <form
-        className="w-full lg:w-[50%] space-y-5 flex-center flex-col"
-        onSubmit={handleSubmitFestival}
-      >
-        <div className="w-full space-y-2">
-          <h1 className="text-green text-3xl font-bold">Festival Poster</h1>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-            className="w-full"
-          />
-          {posterPreview && (
-            <img
-              src={posterPreview}
-              alt="Preview"
-              className="w-32 h-32 object-cover rounded mt-2"
-            />
-          )}
-        </div>
-
-        <h1 className="text-green text-3xl font-bold w-full">
-          Basic Information
-        </h1>
-        <div className="lg:grid grid-cols-3 gap-5 w-full space-y-3 lg:space-y-0">
-          {[
-            { id: "name", placeholder: "Festival Name" },
-            { id: "desc", placeholder: "Festival Description" },
-            { id: "country", placeholder: "Festival Country" },
-            { id: "city", placeholder: "Festival City" },
-            { id: "info", placeholder: "Festival Info" },
-            { id: "link", placeholder: "Festival Link" },
-            { id: "flag", placeholder: "Country Flag" },
-            { id: "dates", placeholder: "Festival Dates" },
-            { id: "founders", placeholder: "Festival Founders" },
-          ].map(({ id, placeholder }) => (
+    <div className="bg-black w-full z-10 absolute h-screen">
+      <FormBackground />
+      <div className="w-full bg-black/70 relative flex-center flex-col h-full">
+        <LogoBeat className="mt-10" />
+        <form
+          className="w-full lg:w-[50%] space-y-5 flex-center flex-col"
+          onSubmit={handleSubmitFestival}
+        >
+          <div className="w-full space-y-2">
+            <h1 className="text-green text-3xl font-bold">Festival Poster</h1>
             <input
-              id={id}
-              key={id}
-              name={id}
-              type="text"
-              autoComplete="false"
-              placeholder={placeholder}
-              value={formData[id] || ""}
-              onChange={handleChange}
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              className="w-full"
             />
-          ))}
-        </div>
-        <Button disabled={loading} type="submit">
-          {loading ? "Submitting..." : "Submit for Review"}
-        </Button>
-      </form>
+            {posterPreview && (
+              <img
+                src={posterPreview}
+                alt="Preview"
+                className="w-32 h-32 object-cover rounded mt-2"
+              />
+            )}
+          </div>
+
+          <h1 className="text-green text-3xl font-bold w-full">
+            Basic Information
+          </h1>
+          <div className="lg:grid grid-cols-3 gap-5 w-full space-y-3 lg:space-y-0">
+            {[
+              { id: "name", placeholder: "Festival Name" },
+              { id: "desc", placeholder: "Festival Description" },
+              { id: "country", placeholder: "Festival Country" },
+              { id: "city", placeholder: "Festival City" },
+              { id: "info", placeholder: "Festival Info" },
+              { id: "link", placeholder: "Festival Link" },
+              { id: "flag", placeholder: "Country Flag" },
+              { id: "dates", placeholder: "Festival Dates" },
+              { id: "founders", placeholder: "Festival Founders" },
+            ].map(({ id, placeholder }) => (
+              <input
+                id={id}
+                key={id}
+                name={id}
+                type="text"
+                autoComplete="false"
+                placeholder={placeholder}
+                value={formData[id] || ""}
+                onChange={handleChange}
+              />
+            ))}
+          </div>
+          <Button disabled={loading} type="submit">
+            {loading ? "Submitting..." : "Submit for Review"}
+          </Button>
+        </form>
+      </div>
     </div>
   );
 };

@@ -22,8 +22,7 @@ const DesktopReviews = ({ items }) => {
                   alt="artist"
                   width={200}
                   height={200}
-                  priority
-                  quality={100}
+                  quality={80}
                 />
               </div>
               <Title>{displayName}</Title>

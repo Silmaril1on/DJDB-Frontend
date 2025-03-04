@@ -34,8 +34,7 @@ const MobileReviews = ({ items }) => {
                     alt="artist"
                     width={200}
                     height={200}
-                    priority
-                    quality={100}
+                    quality={80}
                   />
                 </div>
                 <h1 className="text-lightgray text-sm">{displayName}</h1>

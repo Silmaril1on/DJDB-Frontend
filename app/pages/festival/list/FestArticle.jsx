@@ -24,7 +24,6 @@ const FestArticle = ({ item }) => {
           width={100}
           height={100}
           alt="flag"
-          priority
         />
         <Title>{item.country}</Title> <Title>{item.city}</Title>
       </div>

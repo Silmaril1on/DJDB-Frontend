@@ -8,6 +8,7 @@ import ProfilesSection from "./ProfilesSection";
 import { setSubmitModal } from "@/app/features/modalSlice";
 import LogoBeat from "@/app/components/uicomponents/LogoBeat";
 import { BACKEND_URL } from "@/app/utils/urls";
+import FormBackground from "@/app/components/uicomponents/FormBackground";
 
 const ArtistForm = () => {
   const { user, userDetails } = useSelector((store) => store.user);
@@ -116,26 +117,29 @@ const ArtistForm = () => {
   };
 
   return (
-    <div className="flex-center flex-col bg-black p-5">
-      <LogoBeat />
-      <form
-        className="form-container font-primary text-green"
-        onSubmit={handleSubmit}
-      >
-        <BasicInfoSection formData={formData} setFormData={setFormData} />
-        <ImageSection
-          imagePreview={imagePreview}
-          setImagePreview={setImagePreview}
-          galleryPreviews={galleryPreviews}
-          setGalleryPreviews={setGalleryPreviews}
-          formData={formData}
-          setFormData={setFormData}
-        />
-        <ProfilesSection formData={formData} setFormData={setFormData} />
-        <Button type="submit" disabled={loading}>
-          {loading ? "Submitting..." : "Submit for Review"}
-        </Button>
-      </form>
+    <div className="flex bg-black absolute w-full z-10">
+      <FormBackground />
+      <div className="relative w-full bg-black/70">
+        <LogoBeat className="mt-10" />
+        <form
+          className="form-container font-primary text-green"
+          onSubmit={handleSubmit}
+        >
+          <BasicInfoSection formData={formData} setFormData={setFormData} />
+          <ImageSection
+            imagePreview={imagePreview}
+            setImagePreview={setImagePreview}
+            galleryPreviews={galleryPreviews}
+            setGalleryPreviews={setGalleryPreviews}
+            formData={formData}
+            setFormData={setFormData}
+          />
+          <ProfilesSection formData={formData} setFormData={setFormData} />
+          <Button type="submit" disabled={loading}>
+            {loading ? "Submitting..." : "Submit for Review"}
+          </Button>
+        </form>
+      </div>
     </div>
   );
 };

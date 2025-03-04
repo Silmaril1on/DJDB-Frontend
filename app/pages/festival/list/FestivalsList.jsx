@@ -8,19 +8,18 @@ const FestivalsList = ({ data }) => {
       {data.map((item) => {
         return (
           <div
-            className="w-full md:w-2/4 flex-center flex-col space-y-3 bg-black p-1"
+            className="w-full md:w-2/4 flex-center flex-col space-y-3 bg-black p-1 max-w-[750px]"
             key={item._id}
           >
-            <div className="w-full lg:h-[400px] relative">
+            <div className="w-full h-[250px] lg:h-[450px] relative">
               <GreenSvg />
               <Image
                 className="w-full h-full object-cover hover-image p-1"
-                width={1000}
-                height={1000}
                 src={item.image}
                 alt={item.name}
-                quality={100}
-                priority
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 50vw"
+                quality={80}
               />
             </div>
             <FestArticle item={item} />

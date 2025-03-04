@@ -49,7 +49,7 @@ const AddButtons = () => {
             variants={forChildren}
             key={item.id}
             onClick={() => onOpenModal({ type: item.type })}
-            className="relative green-hover h-24 md:h-44 flex-center text-2xl font-bold w-64 cursor-pointer flex-col"
+            className="relative green-hover h-24 md:h-44 flex-center font-bold w-64 cursor-pointer flex-col"
           >
             <GreenSvg />
             <span className="text-4xl md:text-6xl">{item.icon}</span>

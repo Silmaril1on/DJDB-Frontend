@@ -37,8 +37,7 @@ const MobileSwiper = ({ items }) => {
                   width={300}
                   height={300}
                   alt={name}
-                  quality={100}
-                  priority
+                  quality={80}
                 />
               </div>
               <article>

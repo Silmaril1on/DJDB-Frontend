@@ -30,7 +30,6 @@ const Artistcard = ({ data }) => {
                     width={400}
                     height={400}
                     quality={100}
-                    priority
                     alt={item.name}
                   />
                 </div>

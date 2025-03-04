@@ -38,7 +38,7 @@ const MobileCards = ({ artists }) => {
                   width={300}
                   height={300}
                   alt={name}
-                  quality={100}
+                  quality={80}
                   priority
                 />
               </div>

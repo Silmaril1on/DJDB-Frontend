@@ -5,7 +5,7 @@ const MetaScoreColors = ({ item, className }) => {
   return (
     <div className="flex items-center space-x-1 lg:space-x-3 font-secondary">
       <div
-        className={`px-2  flex-center rounded text-md font-bold ${
+        className={`px-1 md:px-2  flex-center rounded text-sm md:text-base font-bold ${
           metaScore >= 75
             ? "bg-green/20 text-green"
             : metaScore >= 45

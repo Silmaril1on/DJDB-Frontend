@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Title from "@/app/components/uicomponents/Title";
 import Image from "next/image";
 import Link from "next/link";
-import WhiteSvg from "@/app/components/materialcomponents/SilverSvg";
+import WhiteSvg from "@/app/components/materialcomponents/WhiteSvg";
 
 const FestivalList = ({ data }) => {
   return (
@@ -13,7 +13,7 @@ const FestivalList = ({ data }) => {
       whileInView="visible"
       variants={forParent}
       viewport={{ once: true }}
-      className="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-10"
+      className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-10"
     >
       {data.map((item) => {
         return (
@@ -24,15 +24,14 @@ const FestivalList = ({ data }) => {
           >
             <WhiteSvg />
             <Link href="/festivals">
-              <div className="h-52">
+              <div className="h-24 md:h-44 lg:h-32 xl:h-48">
                 <Image
                   className="w-full h-full object-cover hover-image"
                   src={item.image}
                   alt={item.name}
                   width={700}
                   height={700}
-                  quality={100}
-                  priority
+                  quality={80}
                 />
               </div>
               <article>
@@ -47,7 +46,7 @@ const FestivalList = ({ data }) => {
                       className="w-full h-full mr-2 object-cover"
                     />
                   </div>
-                  <span className="font-secondary text-lightgray">
+                  <span className="font-secondary text-[12px] md:text-sm text-lightgray">
                     {item.country}
                   </span>
                 </div>

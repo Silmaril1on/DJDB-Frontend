@@ -39,7 +39,7 @@ const ActiveNewsCard = ({ direction, news, activeIndex }) => {
             <Image
               width={1100}
               height={1100}
-              quality={100}
+              quality={80}
               priority
               src={news[activeIndex].poster || "/placeholder-image.jpg"}
               alt={news[activeIndex].headline}

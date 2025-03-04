@@ -41,7 +41,7 @@ export const fetchRecentFavorites = async (token) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`, // Include token if required
+        Authorization: `Bearer ${token}`,
       },
     });
     if (!response.ok) {
@@ -50,7 +50,7 @@ export const fetchRecentFavorites = async (token) => {
     return await response.json();
   } catch (error) {
     console.error("Error fetching recent favorites:", error.message);
-    return null; // Return null to handle errors gracefully
+    return null;
   }
 };
 
@@ -137,7 +137,7 @@ export const fetchUserDetails = async (token) => {
 export const fetchBornTodayArtists = async () => {
   try {
     const response = await fetch(`${BACKEND_URL}/api/artists/borntoday`, {
-      next: { revalidate: 86400 }, // Revalidate once per day
+      next: { revalidate: 86400 },
     });
     if (!response.ok) {
       throw new Error("Failed to fetch Data");
@@ -154,7 +154,7 @@ export const fetchRandomFests = async () => {
     const response = await fetch(
       `${BACKEND_URL}/api/festivals/randomfestival`,
       {
-        next: { revalidate: 3600 }, // Revalidate every hour
+        next: { revalidate: 3600 },
       }
     );
     if (!response.ok) {
@@ -170,7 +170,7 @@ export const fetchRandomFests = async () => {
 export const fetchFestivals = async () => {
   try {
     const response = await fetch(`${BACKEND_URL}/api/festivals/`, {
-      next: { revalidate: 3600 }, // Revalidate every hour
+      next: { revalidate: 3600 },
     });
     if (!response.ok) {
       throw new Error("Failed to fetch Data");
