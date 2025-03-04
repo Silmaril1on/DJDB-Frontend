@@ -12,7 +12,6 @@ import { FaLock } from "react-icons/fa";
 
 const ResetPassword = () => {
   const searchParams = useSearchParams();
-  const router = useRouter();
   const token = searchParams.get("token");
 
   const [email, setEmail] = useState("");
