@@ -37,7 +37,7 @@ const UserSignUp = () => {
   };
 
   return (
-    <section className="flex items-center overflow-hidden justify-evenly flex-col py-10 h-screen absolute inset-0 bg-black">
+    <section className="flex items-center overflow-hidden justify-evenly flex-col py-10 h-screen absolute inset-0 bg-black z-10">
       <LogoBeat />
       <form onSubmit={handleSubmit} className="form-container">
         <SignUpHeader />

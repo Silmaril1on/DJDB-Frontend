@@ -6,6 +6,7 @@ import Button from "@/app/components/uicomponents/Button";
 import LoginHeader from "./LoginHeader";
 import ErrorMsg from "@/app/components/ErrorMsg";
 import LogoBeat from "@/app/components/uicomponents/LogoBeat";
+import Link from "next/link";
 
 const UserLogin = () => {
   const { login, loading, error } = useLogin();
@@ -28,7 +29,7 @@ const UserLogin = () => {
   };
 
   return (
-    <section className="flex items-center overflow-hidden justify-evenly flex-col py-10 h-screen absolute inset-0 bg-black">
+    <section className="flex items-center z-10 overflow-hidden justify-evenly flex-col py-10 h-screen absolute inset-0 bg-black">
       <LogoBeat />
       <form className="form-container" onSubmit={handleSubmit}>
         <LoginHeader />
@@ -53,6 +54,11 @@ const UserLogin = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+        <Link href="/resetpassword">
+          <span className="hover-white font-primary hover:underline ">
+            Trouble Signing In?{" "}
+          </span>
+        </Link>
         <Button type="submit" className="green-btn" disabled={loading}>
           Log in
         </Button>
