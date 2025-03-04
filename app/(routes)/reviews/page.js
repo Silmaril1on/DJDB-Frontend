@@ -1,4 +1,5 @@
 import MyReviews from "@/app/pages/userreviews/MyReviews";
+import { BACKEND_URL } from "@/app/utils/urls";
 import { cookies } from "next/headers";
 
 export const metadata = () => {
