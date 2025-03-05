@@ -13,7 +13,7 @@ const FestivalList = ({ data }) => {
       whileInView="visible"
       variants={forParent}
       viewport={{ once: true }}
-      className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-10"
+      className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6"
     >
       {data.map((item) => {
         return (
@@ -24,13 +24,13 @@ const FestivalList = ({ data }) => {
           >
             <WhiteSvg />
             <Link href="/festivals">
-              <div className="h-24 md:h-44 lg:h-32 xl:h-48">
+              <div className="h-24 md:h-44 lg:h-32 xl:h-52">
                 <Image
-                  className="w-full h-full object-cover hover-image"
+                  className="object-cover w-full h-full hover-image"
                   src={item.image}
                   alt={item.name}
-                  width={700}
-                  height={700}
+                  width={400}
+                  height={400}
                   quality={80}
                 />
               </div>

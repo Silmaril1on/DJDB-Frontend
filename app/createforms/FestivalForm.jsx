@@ -97,7 +97,6 @@ const FestivalForm = () => {
 
   return (
     <div className="bg-black w-full z-10 absolute h-screen">
-      <FormBackground />
       <div className="w-full bg-black/70 relative flex-center flex-col h-full">
         <LogoBeat className="mt-10" />
         <form

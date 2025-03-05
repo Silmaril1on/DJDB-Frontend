@@ -53,18 +53,18 @@ const SubmissionButtons = ({ item, setPendingData }) => {
   };
 
   return (
-    <div className="space-x-2 flex-center">
+    <div className="md:space-x-2 flex-center flex-col space-y-2 md:space-y-0 md:flex-row *:w-20">
       <button
         onClick={() => handleSubmission(item._id, "approve")}
         disabled={loading.approve || loading.decline}
-        className="green-btn flex-center space-x-2"
+        className="green-btn flex-center"
       >
         {loading.approve ? <Spinner /> : "Approve"}
       </button>
       <button
         onClick={() => handleSubmission(item._id, "decline")}
         disabled={loading.approve || loading.decline}
-        className="pink-btn flex-center space-x-2"
+        className="pink-btn flex-center"
       >
         {loading.decline ? <Spinner /> : "Decline"}
       </button>

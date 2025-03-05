@@ -13,7 +13,7 @@ export const Activities = ({ data }) => {
   const revLength = data.reviews.length;
 
   return (
-    <div className="lg:px-[8%] space-y-10 py-10 w-full xl:w-[85%]">
+    <div className="lg:px-[8%] space-y-10 py-10 w-full xl:w-[85%] overflow-hidden">
       <MyProfileRecents
         count={favLength}
         url={"/favorites"}

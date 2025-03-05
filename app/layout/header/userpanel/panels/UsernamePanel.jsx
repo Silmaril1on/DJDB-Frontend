@@ -47,7 +47,9 @@ const UsernamePanel = () => {
         <Title className="font-bold">{user.username}</Title>
         <DropDown active={active} />
       </div>
-      {active && <UserSettingsPanel setActive={setActive} />}
+      {active && (
+        <UserSettingsPanel handleClick={handleClick} setActive={setActive} />
+      )}
     </div>
   );
 };

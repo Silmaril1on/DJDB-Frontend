@@ -18,7 +18,7 @@ const PendingArtistList = ({ pendingData, setPendingData, loading }) => {
           {pendingData.map((item) => (
             <div
               key={item._id}
-              className="border border-lightgray/30 p-2 relative grid grid-cols-3"
+              className="border border-lightgray/30 bg-neutral-900/70 p-2 relative grid grid-cols-3"
             >
               <SubmittedBy item={item} />
               <SubmittedWho item={item} />

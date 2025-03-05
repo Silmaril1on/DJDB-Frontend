@@ -118,8 +118,8 @@ const ArtistForm = () => {
 
   return (
     <div className="flex bg-black absolute w-full z-10">
-      <FormBackground />
-      <div className="relative w-full bg-black/70">
+      {/* <FormBackground /> */}
+      <div className="relative w-full bg-black/70 flex-center flex-col">
         <LogoBeat className="mt-10" />
         <form
           className="form-container font-primary text-green"

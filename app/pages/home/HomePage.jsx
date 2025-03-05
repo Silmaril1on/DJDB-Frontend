@@ -6,7 +6,7 @@ import NewsSection from "./newsSection/NewsSection";
 
 const HomePage = ({ newsData, bornData, festData }) => {
   return (
-    <section className="flex flex-col bg-neutral-900 space-y-10">
+    <section className="flex flex-col bg-neutral-900 space-y-10 pb-10">
       <NewsSection data={newsData} />
       <ArtistsSection />
       <BornTodaySection data={bornData} />

@@ -41,7 +41,7 @@ const AddButtons = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="flex-center space-x-5 md:space-x-10"
+      className="flex-center space-x-5 md:space-x-10 overflow-hidden"
     >
       {list.map((item) => {
         return (
