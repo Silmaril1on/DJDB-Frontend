@@ -20,8 +20,8 @@ export default function RootLayout({ children }) {
   return (
     <StoreProvider>
       <html lang="en">
-        <body className="text-white overflow-x-hidden flex-center relative">
-          <main className=" max-w-[1600px]">
+        <body className="text-white overflow-x-hidden flex-center relative ">
+          <main className="w-full max-w-[1600px]">
             <Header />
             {children}
             <WarningPopUp />
