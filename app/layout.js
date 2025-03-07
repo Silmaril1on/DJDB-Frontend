@@ -20,17 +20,19 @@ export default function RootLayout({ children }) {
   return (
     <StoreProvider>
       <html lang="en">
-        <body className="text-white overflow-x-hidden flex flex-col relative">
-          <Header />
-          {children}
-          <WarningPopUp />
-          <RatingPopUp />
-          <ReviewPopUp />
-          <EditReviewForm />
-          <AddModal />
-          <SideMenu />
-          <SubmitForm />
-          <Footer />
+        <body className="text-white overflow-x-hidden flex-center relative">
+          <main className=" max-w-[1600px]">
+            <Header />
+            {children}
+            <WarningPopUp />
+            <RatingPopUp />
+            <ReviewPopUp />
+            <EditReviewForm />
+            <AddModal />
+            <SideMenu />
+            <SubmitForm />
+            <Footer />
+          </main>
         </body>
       </html>
     </StoreProvider>

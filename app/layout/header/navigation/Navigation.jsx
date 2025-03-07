@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import SearchBar from "../search/SearchBar";
 
 const Navigation = () => {
-  const { userDetails } = useSelector((store) => store.user);
+  const { userDetails, user } = useSelector((store) => store.user);
 
   return (
     <div className="hidden md:flex-center flex-row space-x-4">
