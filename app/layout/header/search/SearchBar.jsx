@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect, useRef } from "react";
 import { useDebounce } from "use-debounce";
 import SearchInput from "./components/SearchInput";
@@ -14,7 +15,7 @@ const SearchBar = () => {
   const [showResults, setShowResults] = useState(false);
   const searchRef = useRef(null);
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3500";
+  const API_URL = "https://djdb-api.onrender.com" || "http://localhost:3500";
 
   useEffect(() => {
     const handleClickOutside = (event) => {
