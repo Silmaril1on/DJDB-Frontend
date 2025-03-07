@@ -1,5 +1,5 @@
-import SubmitForm from "./components/uicomponents/SubmitForm";
 import "./globals.css";
+import SubmitForm from "./components/uicomponents/SubmitForm";
 import RatingPopUp from "./helpers/RatingPopUp";
 import ReviewPopUp from "./helpers/ReviewPopUp";
 import WarningPopUp from "./helpers/WarningPopUp";

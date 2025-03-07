@@ -1,7 +1,6 @@
 "use client";
 import Title from "@/app/components/uicomponents/Title";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const BornSlider = ({ data }) => {
   const cardWidth = 176;
@@ -25,14 +24,10 @@ const BornSlider = ({ data }) => {
               key={item.id}
             >
               <div className="h-44 w-44 rounded-full overflow-hidden">
-                <Image
+                <img
                   className="w-full h-full object-cover hover-image pointer-events-none"
                   src={item.image}
-                  width={300}
-                  height={300}
                   alt={item.name}
-                  quality={80}
-                  priority
                 />
               </div>
               <Title className="text-lightgray">{item.name}</Title>

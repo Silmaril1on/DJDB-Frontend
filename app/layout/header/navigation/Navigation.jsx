@@ -4,6 +4,7 @@ import LinkComponent from "@/app/components/uicomponents/LinkComponent";
 import { TbVinyl } from "react-icons/tb";
 import { MdAdminPanelSettings, MdFestival } from "react-icons/md";
 import { useSelector } from "react-redux";
+import SearchBar from "../search/SearchBar";
 
 const Navigation = () => {
   const { userDetails } = useSelector((store) => store.user);
@@ -25,6 +26,7 @@ const Navigation = () => {
           <span>Dashboard</span>
         </LinkComponent>
       )}
+      <SearchBar />
     </div>
   );
 };

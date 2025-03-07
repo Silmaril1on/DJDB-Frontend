@@ -138,7 +138,6 @@ export const fetchBornTodayArtists = async () => {
   try {
     const response = await fetch(`${BACKEND_URL}/api/artists/borntoday`, {
       cache: "no-store",
-      next: { revalidate: 6400 },
     });
 
     if (!response.ok) {
