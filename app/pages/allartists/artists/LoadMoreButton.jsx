@@ -9,7 +9,11 @@ const LoadMoreButton = ({
   return (
     <>
       {currentPage < totalPages && (
-        <button onClick={loadMoreArtists} className="green-btn w-fit">
+        <button
+          onClick={loadMoreArtists}
+          className="green-btn w-fit"
+          disabled={isLoadingMore}
+        >
           {isLoadingMore ? <Spinner /> : "Load More"}
         </button>
       )}

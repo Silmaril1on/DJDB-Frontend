@@ -137,12 +137,16 @@ export const fetchUserDetails = async (token) => {
 export const fetchBornTodayArtists = async () => {
   try {
     const response = await fetch(`${BACKEND_URL}/api/artists/borntoday`, {
-      next: { revalidate: 86400 },
+      cache: "no-store",
+      next: { revalidate: 6400 },
     });
+
     if (!response.ok) {
       throw new Error("Failed to fetch Data");
     }
-    return await response.json();
+
+    const data = await response.json();
+    return data;
   } catch (error) {
     console.error("Error fetching details", error);
     return [];

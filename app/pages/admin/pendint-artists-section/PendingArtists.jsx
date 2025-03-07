@@ -5,6 +5,7 @@ import PendingArtistList from "./pending-artist-components/PendingArtistList";
 import Title from "@/app/components/uicomponents/Title";
 import Paragraph from "@/app/components/uicomponents/Paragraph";
 import { BACKEND_URL } from "@/app/utils/urls";
+import Spinner from "@/app/components/Spinner";
 
 const PendingArtists = () => {
   const [pendingData, setPendingData] = useState([]);
@@ -36,14 +37,19 @@ const PendingArtists = () => {
   }, [user]);
 
   return (
-    <div className="bg-black px-3 lg:px-5">
+    <div className="bg-black px-3 lg:px-5 py-5">
       <Title>Pending Submissions</Title>
       <Paragraph>{pendingData.length} Pending Submissions</Paragraph>
-      <PendingArtistList
-        loading={loading}
-        pendingData={pendingData}
-        setPendingData={setPendingData}
-      />
+      {loading ? (
+        <div className="flex-center h-96">
+          <Spinner />
+        </div>
+      ) : (
+        <PendingArtistList
+          pendingData={pendingData}
+          setPendingData={setPendingData}
+        />
+      )}
     </div>
   );
 };

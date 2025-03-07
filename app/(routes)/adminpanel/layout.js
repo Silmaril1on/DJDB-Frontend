@@ -5,23 +5,15 @@ export const metadata = {
   title: "DJDB - Admin Panel",
 };
 
-const DashboardLayout = ({
-  useranalytics,
-  artistanalytics,
-  pendingartists,
-}) => {
+const DashboardLayout = ({ useranalytics, pendingartists }) => {
   return (
     <div className="space-y-4 bg-neutral-900">
-      <SectionHeadline
-        title="Admin panel"
-        description="this is admin panel, from where is controlled everything"
-      />
+      <SectionHeadline title="Admin panel" />
       <AdminNavBar />
       <div className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-5">
         <section className="lg:w-[60%] w-full">{pendingartists}</section>
         <section className="w-full lg:w-[40%] space-y-5 ">
           {useranalytics}
-          {artistanalytics}
         </section>
       </div>
     </div>

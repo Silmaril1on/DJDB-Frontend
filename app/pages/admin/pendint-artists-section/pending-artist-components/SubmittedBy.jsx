@@ -6,7 +6,7 @@ const SubmittedBy = ({ item }) => {
     <div>
       <SpanText>Submitted by</SpanText>
       <div className="flex flex-col">
-        <Title className="text-pink">{item.submittedBy.username}</Title>
+        <Title>{item.submittedBy.username}</Title>
         <SpanText>{item.submittedBy.email}</SpanText>
       </div>
       <SpanText>{new Date(item.createdAt).toLocaleDateString()}</SpanText>

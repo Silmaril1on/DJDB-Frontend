@@ -19,7 +19,7 @@ const Artistcard = ({ data }) => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
-              className="flex-center group flex-col bg-black w-24 md:w-44 h-auto relative p-1"
+              className="flex-center group flex-col bg-black w-28 md:w-44 h-auto relative p-1"
             >
               <WhiteSvg />
               <Link href={`/artists/${item._id}`} className="w-full h-full">

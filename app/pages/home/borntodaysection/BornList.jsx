@@ -1,26 +1,48 @@
 import Title from "@/app/components/uicomponents/Title";
 import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
-const BornList = () => {
+const BornList = ({ data }) => {
+  const calculateAge = (birthdate) => {
+    const birthDate = new Date(birthdate);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const month = today.getMonth();
+    const day = today.getDate();
+    if (
+      month < birthDate.getMonth() ||
+      (month === birthDate.getMonth() && day < birthDate.getDate())
+    ) {
+      age--;
+    }
+    return age;
+  };
+
   return (
-    <div>
-      <div className="w-52 text-white flex-center flex-col">
-        <div className=" w-full h-52 rounded-full overflow-hidden">
-          <Image
-            className="w-full h-full hover-image object-cover"
-            src="/assets/test.webp"
-            alt="text"
-            width={500}
-            height={500}
-            quality={100}
-            priority
-          />
-        </div>
-        <article className="flex-center flex-col">
-          <Title>Jan Blomqvist</Title>
-          <span className=" font-bold">52</span>
-        </article>
-      </div>
+    <div className="py-5">
+      {data.map((item) => {
+        const displayName = item.stageName || item.name;
+        return (
+          <div key={item._id} className="flex-center flex-col w-52">
+            <Link
+              href={`/artists/${item._id}`}
+              className="flex-center flex-col"
+            >
+              <Image
+                className="rounded-full w-52 h-52 object-cover hover-image"
+                src={item.image}
+                alt={item.name}
+                width={300}
+                height={300}
+                quality={70}
+              />
+              <Title className="text-lightgray">{displayName}</Title>
+              <span className="font-bold">{calculateAge(item.birth)}</span>
+            </Link>
+          </div>
+        );
+      })}
     </div>
   );
 };

@@ -15,14 +15,22 @@ const ArtistList = ({ initialData, filter }) => {
       try {
         const nextPage = currentPage + 1;
         const response = await fetch(
-          `${BACKEND_URL}/api/artists?page=${nextPage}&limit=10`
+          `${BACKEND_URL}/api/artists?page=${nextPage}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch more artists");
         }
         const newData = await response.json();
-        setData((prevData) => [...prevData, ...newData.artists]);
+
+        // Ensure no duplicates
+        const existingIds = new Set(data.map((artist) => artist._id));
+        const uniqueNewArtists = newData.artists.filter(
+          (artist) => !existingIds.has(artist._id)
+        );
+
+        setData((prevData) => [...prevData, ...uniqueNewArtists]);
         setCurrentPage(nextPage);
+        setTotalPages(newData.totalPages);
       } catch (error) {
         console.error("Error loading more artists:", error);
       } finally {
@@ -30,8 +38,6 @@ const ArtistList = ({ initialData, filter }) => {
       }
     }
   };
-
-  console.log(data);
 
   const sortArtists = [...data]
     .filter((artist) => {

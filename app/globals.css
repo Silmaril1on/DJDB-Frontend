@@ -79,6 +79,9 @@ body::-webkit-scrollbar-thumb {
   .hover-image {
     @apply brightness-[0.8] hover:brightness-100 duration-300;
   }
+  .metric-box {
+    @apply bg-neutral-900/70 border border-lightgray/30;
+  }
 }
 
 input:-webkit-autofill,
